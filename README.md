@@ -40,13 +40,25 @@ Welcome! 👋 This repository is my personal collection of daily lab exercises, 
 
 ---
 
+### 🛠️ Day 04 — Tool-Calling Agents, Schemas & Sheets
+* **Domain:** Bakery & Stationery Autonomous Ordering
+* **Key Learnings:**
+  * Converting regular Python functions into model-invocable tools with LangChain's `@tool` decorator.
+  * Discovering how docstrings act as the model's manual (and how vague descriptions like `"does stuff"` break tool selection).
+  * Enforcing Pydantic schemas (`Order` and `StationeryOrder`) to parse messy chats into database-ready records.
+  * Connecting live order logging to Google Sheets (`gspread`) and local CSV mirrors while rejecting invalid edge-case queries.
+  * Tracing the complete agent lifecycle (`HumanMessage` ➔ `AIMessage` tool request ➔ `ToolMessage` result ➔ final answer).
+* **Direct Access:** [Read Day 4 Lab Notes ➔](DAY4/README.md) · [Open Day 4 Notebook ➔](DAY4/task.ipynb)
+
+---
+
 ## 💡 How to Run the Code
 
 ### 🔹 Running in Google Colab (Zero-Setup Method)
 1. Open any notebook link above directly in **Google Colab**.
 2. Open the **Secrets (🔑)** panel on the left sidebar.
 3. Add your free API keys and toggle **Notebook access** to **ON**:
-   * `GROQ_API_KEY`: For Day 1 & Day 2 (free from [console.groq.com](https://console.groq.com/))
+   * `GROQ_API_KEY`: For Day 1, Day 2 & Day 4 (free from [console.groq.com](https://console.groq.com/))
    * `GOOGLE_API_KEY`: For Day 3 (free from [aistudio.google.com](https://aistudio.google.com/))
 4. Select **Runtime ➔ Run all** (`Ctrl + F9`).
 
@@ -61,7 +73,7 @@ cp .env.example .env
 # (Insert your GROQ_API_KEY and GOOGLE_API_KEY inside .env)
 
 # 3. Install packages & start
-pip install langchain langchain-groq langchain-google-genai openai pydantic ipywidgets python-dotenv
+pip install langchain langchain-groq langchain-google-genai gspread openai pydantic ipywidgets python-dotenv
 jupyter notebook
 ```
 
@@ -72,6 +84,7 @@ jupyter notebook
 * **`DAY1/`** — `agenticAI_Day1.ipynb` · `README.md` · `.env.example`
 * **`DAY2/`** — `agenticAI_Day2.ipynb` · `README.md`
 * **`DAY3/`** — `task.ipynb` · `tests.csv` · `brightpage_tests.csv` · `README.md`
+* **`DAY4/`** — `task.ipynb` · `sweet_crumbs_orders.csv` · `brightpage_orders.csv` · `README.md`
 
 ---
 ✨ *Crafted & maintained by **Posakaveri28**.*
