@@ -52,28 +52,40 @@ Welcome! 👋 This repository is my personal collection of daily lab exercises, 
 
 ---
 
+### 🧠 Day 05 — Thread Memory, ChromaDB RAG & PDF Intelligence
+* **Domain:** BrightPage Stationery Agent & Story Document QA
+* **Key Learnings:**
+  * Isolating concurrent customer sessions using LangGraph's `InMemorySaver` with unique `thread_id`s.
+  * Building semantic vector search over 16 store policies and FAQs using `ChromaDB` and `all-MiniLM-L6-v2`.
+  * Exposing knowledge retrieval as an autonomous `@tool` to ground answers and prevent hallucination.
+  * Passing 17/18 (94%) automated evaluation tests across pricing, policies, and edge cases.
+  * Multi-paragraph PDF RAG lab (`story_rag.pdf`): text extraction, semantic chunking, and grounded Q&A with refusal.
+* **Direct Access:** [Read Day 5 Lab Notes ➔](DAY5/README.md) · [Open Day 5 Notebook ➔](DAY5/task.ipynb)
+
+---
+
 ## 💡 How to Run the Code
 
 ### 🔹 Running in Google Colab (Zero-Setup Method)
 1. Open any notebook link above directly in **Google Colab**.
 2. Open the **Secrets (🔑)** panel on the left sidebar.
 3. Add your free API keys and toggle **Notebook access** to **ON**:
-   * `GROQ_API_KEY`: For Day 1, Day 2 & Day 4 (free from [console.groq.com](https://console.groq.com/))
+   * `GROQ_API_KEY`: For Day 1, Day 2, Day 4 & Day 5 (free from [console.groq.com](https://console.groq.com/))
    * `GOOGLE_API_KEY`: For Day 3 (free from [aistudio.google.com](https://aistudio.google.com/))
 4. Select **Runtime ➔ Run all** (`Ctrl + F9`).
 
 ### 🔹 Running Locally
 ```bash
 # 1. Clone repository
-git clone https://github.com/Posakaveri28/Agentic_Ai.git
-cd Agentic_Ai
+git clone https://github.com/Posakaveri28/24B11CS352_DriveReady_OPC_2026.git
+cd 24B11CS352_DriveReady_OPC_2026
 
 # 2. Configure environment
 cp .env.example .env
 # (Insert your GROQ_API_KEY and GOOGLE_API_KEY inside .env)
 
 # 3. Install packages & start
-pip install langchain langchain-groq langchain-google-genai gspread openai pydantic ipywidgets python-dotenv
+pip install langchain langchain-groq langchain-google-genai langgraph chromadb sentence-transformers pypdf gspread openai pydantic ipywidgets python-dotenv
 jupyter notebook
 ```
 
@@ -85,6 +97,7 @@ jupyter notebook
 * **`DAY2/`** — `agenticAI_Day2.ipynb` · `README.md`
 * **`DAY3/`** — `task.ipynb` · `tests.csv` · `brightpage_tests.csv` · `README.md`
 * **`DAY4/`** — `task.ipynb` · `sweet_crumbs_orders.csv` · `brightpage_orders.csv` · `README.md`
+* **`DAY5/`** — `task.ipynb` · `story_rag.pdf` · `tests.csv` · `brightpage_orders.csv` · `README.md`
 
 ---
 ✨ *Crafted & maintained by **Posakaveri28**.*
